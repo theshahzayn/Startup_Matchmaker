@@ -99,38 +99,40 @@ def recommend_hybrid(input_data, top_k=6):
     return results
 
 # -----------------------------
-# Startup Similarity Recommender
+# Startup Similarity Recommender (Fixed to return startups, not investors)
 # -----------------------------
-# Build one-hot feature matrix for startups
-startup_ind = pd.get_dummies(startup_df["Industry"], prefix="Industry")
-startup_stg = pd.get_dummies(startup_df["Funding Stage"], prefix="Stage")
-startup_features = pd.concat([startup_ind, startup_stg], axis=1)
+startup_profiles = pd.read_csv("./app/data/startups_profiles.csv")
+startup_features = pd.read_csv("./app/data/startups_features.csv")
 
 def recommend_similar_startups(input_data, top_k=6):
-    # Build query vector from selected industries & stages
     industries = input_data.get("industries", [])
     stages     = input_data.get("stages", [])
 
-    query = []
+    # Build query vector
+    query_vector = []
     for col in startup_features.columns:
         if col.startswith("Industry_"):
-            query.append(1 if col.replace("Industry_", "") in industries else 0)
-        elif col.startswith("Stage_"):
-            query.append(1 if col.replace("Stage_", "") in stages else 0)
+            query_vector.append(1 if col.replace("Industry_", "") in industries else 0)
+        elif col == "Funding Stage Numeric":
+            # Use the average stage index of selected stages
+            stage_map = {"Pre-Seed": 1, "Seed": 2, "Series A": 3, "Series B": 4, "Series C": 5, "Growth": 6}
+            numeric_stage = np.mean([stage_map.get(stage, 0) for stage in stages]) if stages else 0
+            query_vector.append(numeric_stage)
         else:
-            query.append(0)
+            query_vector.append(0)
 
-    # Compute similarity to all startups
-    scores   = cosine_similarity([query], startup_features.values).flatten()
+    scores   = cosine_similarity([query_vector], startup_features.values).flatten()
     top_idxs = np.argsort(scores)[::-1][:top_k]
 
-    results = []
-    for i in top_idxs:
-        row = startup_df.iloc[i]
-        results.append({
+    recommendations = []
+    for idx in top_idxs:
+        row = startup_profiles.iloc[idx]
+        recommendations.append({
             "Startup Name":     row["Startup Name"],
             "Industry":         row["Industry"],
-            "Funding Stage":    row["Funding Stage"],
-            "Similarity Score": float(round(scores[i], 3))
+            "Funding Stage":    row["Funding Stage Numeric"],
+            "Similarity Score": round(scores[idx], 3)
         })
-    return results
+
+    return recommendations
+

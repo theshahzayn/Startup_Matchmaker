@@ -31,9 +31,9 @@ def recommend():
             result = recommend_similar_startups(data)
         else:
             return jsonify({"error": "Invalid rs_type. Use: content, collaborative, hybrid, startup_similarity"}), 400
-
+        print("Results:", result)
         return jsonify({"recommendations": result})
-
+    
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

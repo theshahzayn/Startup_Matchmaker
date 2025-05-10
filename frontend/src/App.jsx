@@ -32,25 +32,16 @@ export default function App() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      let payload = { industries, stages };
-
-      // for non-startup_similarity, include RS type & weights
-      if (rsType !== "startup_similarity") {
-        payload = {
-          ...payload,
-          rs_type: rsType,
-          activityWeight,
-          investmentWeight
-        };
-      }
-
-      const url =
-        rsType === "startup_similarity"
-          ? "/recommend/startup"
-          : "/recommend";
-
+      const payload = {
+        industries,
+        stages,
+        rs_type: rsType,
+        activityWeight,
+        investmentWeight
+      };
+  
       const res = await axios.post("http://127.0.0.1:5000/recommend", payload);
-
+  
       if (res.data.recommendations) {
         setResults(res.data.recommendations);
       } else {
@@ -64,6 +55,7 @@ export default function App() {
     }
     setLoading(false);
   };
+  
 
   return (
     <div className="min-h-screen bg-[#141414] text-white font-sans px-6 py-12">
@@ -176,33 +168,37 @@ export default function App() {
 
       {/* Results Grid */}
       <div className="mt-12 max-w-5xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {results.map((inv, idx) => (
-          <div
-            key={idx}
-            className="bg-[#1f1f1f] rounded-xl p-5 shadow-lg hover:shadow-red-500/20 transition-shadow border border-gray-800"
-          >
-            <h2 className="text-xl font-bold text-red-400">{inv["Investor Name"]}</h2>
-            <p className="text-gray-400 text-sm mb-2">
-              {inv.Location || "Location N/A"}
-            </p>
-            <ul className="text-sm text-gray-300 space-y-1">
-              <li>
-                <span className="text-gray-400">Score:</span> {inv.Score}
-              </li>
-              <li>
-                <span className="text-gray-400">Ticket Size:</span> {inv["Ticket Size"] || "—"}
-              </li>
-              <li>
-                <span className="text-gray-400">Recent Year:</span>{" "}
-                {inv["Recent Activity Year"] || "—"}
-              </li>
-              <li>
-                <span className="text-gray-400">Investments:</span>{" "}
-                {inv["Number of Investments"] || "—"}
-              </li>
-            </ul>
-          </div>
-        ))}
+        {rsType === "startup_similarity" ? (
+          results.map((startup, idx) => (
+            <div
+              key={idx}
+              className="bg-[#1f1f1f] rounded-xl p-5 shadow-lg hover:shadow-blue-500/20 transition-shadow border border-gray-800"
+            >
+              <h2 className="text-xl font-bold text-blue-400">{startup["Startup Name"]}</h2>
+              <p className="text-gray-400 text-sm mb-2">Industry: {startup.Industry || "—"}</p>
+              <ul className="text-sm text-gray-300 space-y-1">
+                <li><span className="text-gray-400">Funding Stage:</span> {startup["Funding Stage"] || "—"}</li>
+                <li><span className="text-gray-400">Similarity Score:</span> {startup["Similarity Score"]}</li>
+              </ul>
+            </div>
+          ))
+        ) : (
+          results.map((inv, idx) => (
+            <div
+              key={idx}
+              className="bg-[#1f1f1f] rounded-xl p-5 shadow-lg hover:shadow-red-500/20 transition-shadow border border-gray-800"
+            >
+              <h2 className="text-xl font-bold text-red-400">{inv["Investor Name"]}</h2>
+              <p className="text-gray-400 text-sm mb-2">{inv.Location || "Location N/A"}</p>
+              <ul className="text-sm text-gray-300 space-y-1">
+                <li><span className="text-gray-400">Score:</span> {inv.Score}</li>
+                <li><span className="text-gray-400">Ticket Size:</span> {inv["Ticket Size"] || "—"}</li>
+                <li><span className="text-gray-400">Recent Year:</span> {inv["Recent Activity Year"] || "—"}</li>
+                <li><span className="text-gray-400">Investments:</span> {inv["Number of Investments"] || "—"}</li>
+              </ul>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

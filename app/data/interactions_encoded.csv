@@ -1,169 +1,169 @@
 Investor Name,Startup Name,Industry,Location,Funding Stage,Team Size,Founded Year,Business Model_B2B,Business Model_B2C,Customer Segment_Consumers,Customer Segment_Enterprises,Customer Segment_SMEs,Revenue Stage_Pre-Revenue,Revenue Stage_Profitable,Revenue Stage_Revenue-Generating,Funding Stage Numeric
-Indus Valley Capital,Taleemi Mela,EdTech,"Karachi, Pakistan",Seed,<10,2023,False,True,True,False,False,True,False,False,2.0
-Indus Valley Capital,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Indus Valley Capital,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
-Sarmayacar,24Seven.pk,E-commerce,"Karachi, Pakistan",Pre-Series A,<10,2020,False,True,True,False,False,True,False,False,0.0
-Sarmayacar,Daraz,E-commerce,"Karachi, Pakistan",Series C,100+,2015,False,True,True,False,False,False,False,True,5.0
-Sarmayacar,Homestyle,FinTech,"Lahore, Pakistan",Series A,30-50,2019,False,True,True,False,False,False,False,True,3.0
-Fatima Gobi Ventures,Tajir,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Fatima Gobi Ventures,Zayn Capital,Logistics,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Fatima Gobi Ventures,Educative,EdTech,"Seattle, USA",Series A,30-50,2019,False,True,True,False,False,False,False,True,3.0
-Zayn Capital,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
-Zayn Capital,Zarya,E-commerce,"Lahore, Pakistan",N/A,N/A,N/A,False,True,True,False,False,True,False,False,0.0
-Zayn Capital,Kalsoom,AgriTech,"Lahore, Pakistan",Seed,<10,2023,True,False,False,False,True,True,False,False,2.0
-i2i Ventures,Safepay,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,True,False,False,False,True,True,False,False,1.0
-i2i Ventures,Savyour,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-i2i Ventures,DEMO,Tech,"Islamabad, Pakistan",,N/A,N/A,False,True,True,False,False,False,False,True,0.0
-Lakson Venture Capital,Bykea,Mobility,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Lakson Venture Capital,Dawaai,Healthtech,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-TPL e-Ventures,Trukkr,Logistics,"Karachi, Pakistan",Pre-Series A,<10,2020,True,False,False,False,True,True,False,False,0.0
-TPL e-Ventures,Muawin,Fintech,"Karachi, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
-TPL e-Ventures,Tajir,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Deosai Ventures,Oraan,Fintech,"Karachi, Pakistan",Pre-Series A,<10,2020,False,True,True,False,False,True,False,False,0.0
-Deosai Ventures,Sukoon,Healthcare,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-47 Ventures,Zeenat,,,,N/A,N/A,False,True,True,False,False,True,False,False,0.0
-47 Ventures,KalPay,Fintech,"Karachi, Pakistan",Seed,<10,2023,False,True,True,False,False,True,False,False,2.0
-Cordoba Ventures,Sehat Kahani,Healthtech,"Karachi, Pakistan",Series A,100+,2015,False,True,True,False,False,False,False,True,3.0
-Cordoba Ventures,Dot & Line,EdTech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Planet N Group,Kuzaco,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Planet N Group,Tez Financial,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-CresVentures,QisstPay,Fintech,"Islamabad, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Walled City Co.,Swipe,Fintech,"Lahore, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Pakistan Investment Network,PublishEX,Tech,"Islamabad, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
-Teamup Angels,Smartchoice.pk,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
-Teamup Angels,Edkasa,EdTech,"Lahore, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Pakistani Angels (Pak Angels),HackPractice,Tech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
-Pakistani Angels (Pak Angels),Skool.pk,EdTech,"Karachi, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
-TiE Islamabad Angels,YPay,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
-TiE Islamabad Angels,Mauqa Online,Tech,"Islamabad, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Pakistan Business Angel Network,EZBuy,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Y Combinator,Airlift Technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Y Combinator,Cowlar (Anzen),IoT/AgriTech,"Islamabad, Pakistan",Seed,<10,2023,True,False,False,False,True,True,False,False,2.0
-Y Combinator,Oraan,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-500 Global (500 Startups),Safepay,Fintech,"Karachi, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
-500 Global (500 Startups),Wukla,LegalTech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Ignite National Technology Fund,TelloTalk,Tech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Ignite National Technology Fund,Aqua Agro,AgriTech,"Lahore, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
-International Finance Corporation,TradeDepot,E-commerce,"Lagos, Nigeria",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
-International Finance Corporation,Fawry,FinTech,"Cairo, Egypt",Growth,100+,2014,False,True,True,False,False,False,False,True,8.0
-International Finance Corporation,TechConnect,Tech,"Washington, DC, USA",Series B,50-100,2017,True,False,False,True,False,False,False,True,4.0
-Shorooq Partners,PureHarvest,AgriTech,"Abu Dhabi, UAE",Series A,30-50,2019,True,False,False,True,False,False,False,True,3.0
-Shorooq Partners,BitOasis,FinTech,"Dubai, UAE",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Shorooq Partners,SoftSolutions,Software,"Abu Dhabi, UAE",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-VEF (Vostok Emerging Finance),Jumo,FinTech,"Cape Town, South Africa",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-VEF (Vostok Emerging Finance),Konfio,FinTech,"Mexico City, Mexico",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
-VEF (Vostok Emerging Finance),InclusionX,Financial Inclusion,"Stockholm, Sweden",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-Quona Capital,Klar,FinTech,"Mexico City, Mexico",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Quona Capital,Alloy,FinTech,"New York, USA",Series B,50-100,2017,True,False,False,True,False,False,False,True,4.0
-Quona Capital,CredAll,Financial Inclusion,"Washington, DC, USA",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-BeeNext,Xendit,FinTech,"Jakarta, Indonesia",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
-BeeNext,Zilingo,E-commerce,"Singapore, Singapore",Series C,100+,2015,False,True,True,False,False,False,False,True,5.0
-BeeNext,ShopHub,E-commerce,"Singapore, Singapore",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Wamda Capital,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Wamda Capital,NEXT (Next Degree),IT Services,"Karachi, Pakistan",N/A,N/A,N/A,True,False,False,True,False,False,False,True,0.0
-Wamda Capital,AssignMe,EdTech,"Karachi, Pakistan",N/A,N/A,N/A,False,True,True,False,False,True,False,False,0.0
-BECO Capital,Yayvo,E-commerce,"Karachi, Pakistan",N/A,N/A,N/A,False,True,True,False,False,False,False,True,0.0
-BECO Capital,10xC,Fintech,"Karachi, Pakistan",,10-30,2021,False,True,True,False,False,False,False,True,0.0
-Flat6Labs,Xylexa,Healthtech,"Islamabad, Pakistan",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-Flat6Labs,Byte,Foodtech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Flat6Labs,Canary Tech,IT Services,"Rawalpindi, Pakistan",N/A,N/A,N/A,True,False,False,True,False,False,False,True,0.0
-Alan Rutledge (Angel),Jugnu,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Altaf Khan (Angel),Shopsy.pk,E-commerce,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
-Ameer Hamza Sadiq (Angel),Find My Adventure,Traveltech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,False,False,True,2.0
-B&Y Venture Partners,Investors Lounge,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Buckley Ventures,Airlift Technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Canaan Partners,Tajir,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Conjunction Capital,Integry,SaaS,"San Francisco, USA",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-Defy Partners,Sehat Kahani,Healthtech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Glowfish Labs (Venture Studio),PrizeBonds,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
-Karachi Angels Network,Blink,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Lahore Angels Network,TrashIt,CleanTech,"Lahore, Pakistan",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-M. Shahzad (Angel),Dot & Line,EdTech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Nadeem Hussain (Angel),Tez Financial,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Shehryar Hydri (Angel),Work Hall,PropTech,"Lahore, Pakistan",Seed,10-30,2021,False,True,True,False,False,False,False,True,2.0
-Acrew Capital,Trellis Housing Finance,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Addition (Lee Fixel),Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
-Antler,Hysab Kytab,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
-Banana Capital,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
-Bastian Lehmann (Angel),Airlift Technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Biz Stone (Angel),Airlift Technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Elahi Group,Trellis Housing Finance,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Kingsway Capital,Bykea,Mobility,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-MDI Ventures,Trellis Housing Finance,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-Middle East Venture Partners (MEVP),Bykea,Mobility,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
-Nama Ventures,Integry,SaaS,"San Francisco, USA",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
-Oikocredit,Tez Financial,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
-BEENEXT,Finja,Fintech,"Lahore, Pakistan",Series A,11-50,2019,True,False,False,False,True,False,False,True,3.0
-Middle East Venture Partners,BYKEA,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
-United Capital Partners (UCP),Cheetay,E-commerce,"Lahore, Pakistan",Pre-Series A,11-50,2018,False,True,True,False,False,False,False,True,0.0
-Turret Capital,Cheetay,E-commerce,"Lahore, Pakistan",Pre-Series A,11-50,2018,False,True,True,False,False,False,False,True,0.0
-Afore Capital,CreditBook,Fintech,"Karachi, Pakistan",Series A,11-50,2019,True,False,False,False,True,False,False,True,3.0
-VEON Ventures,Dastgyr,B2B E-commerce,"Lahore, Pakistan",Series A,51-100,2018,True,False,False,False,True,False,False,True,3.0
-SOSV,Dastgyr,B2B E-commerce,"Lahore, Pakistan",Series A,11-50,2018,True,False,False,False,True,False,False,True,3.0
-Habib Bank Limited (HBL),Finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
-Systems Limited,Jugnu (Sales Junction),E-commerce,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
-Shorooq Partners,Retailo,Commerce,"Riyadh, Saudi Arabia",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
-MSA Capital,PostEx,Fintech,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
-Global Founders Capital,Truck It In,Logistics,"Karachi, Pakistan",Seed,11-50,2020,True,False,False,False,True,True,False,False,2.0
-Institutional Venture Partners (IVP),Motive (KeepTruckin),Logistics,"San Francisco, USA",Series E,100+,2014,True,False,False,True,False,False,True,False,7.0
-Graphene Ventures,NayaPay,Fintech,"Karachi, Pakistan",Seed,51-100,2018,False,True,True,False,False,True,False,False,2.0
-Meran Bank,NayaPay,Fintech,"Karachi, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
-Wavemaker Partners,Oraan,Fintech,"Karachi, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
-RTP Global,PostEx,Fintech,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
-JS Group,PriceOye,E-commerce,"Islamabad, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
-Valar Ventures,QisstPay,Fintech,"Islamabad, Pakistan",Series A,51-100,2020,False,True,True,False,False,False,False,True,3.0
-VentureDive,QisstPay,Fintech,"Islamabad, Pakistan",Series A,51-100,2020,False,True,True,False,False,False,False,True,3.0
-Recharge Capital,SadaPay,Fintech,"Islamabad, Pakistan",Seed,51-100,2019,False,True,True,False,False,True,False,False,2.0
-Defy.vc,SadaPay,Fintech,"Islamabad, Pakistan",Seed,51-100,2019,False,True,True,False,False,True,False,False,2.0
-Elahi Group,Sehat Kahani,Healthtech,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
-Impact Investment Exchange (IIX),Sehat Kahani,Healthtech,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
-Vibe Capital,Tazah,AgriTech,"Lahore, Pakistan",Seed,11-50,2021,True,False,False,False,True,True,False,False,2.0
-Haitou Global,Trukkr,Fintech,"Karachi, Pakistan",Seed,11-50,2021,True,False,False,False,True,True,False,False,2.0
-Picus Capital,Truck It In,Logistics,"Karachi, Pakistan",Seed,11-50,2020,True,False,False,False,True,True,False,False,2.0
-Derayah Venture Capital,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
-Next Billion Ventures,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
-S7 Ventures,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
-Quiet Capital,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Liberty City Ventures,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Polymath Digital,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Banana Capital,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Khwarizmi Ventures,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Canaan Partners,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Addition,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Mantis VC,TAG (TAG Innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
-Quona Capital,Finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
-ICU Ventures,Finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
-Gray Mackenzie Engineering,Finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
-Omidyar Network,Tez Financial Services,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
-Accion Venture Lab,Tez Financial Services,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
-Flourish Ventures,Tez Financial Services,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
-Kinnow Capital,SnappRetail,E-commerce,"Karachi, Pakistan",Seed,11-50,2021,True,False,False,False,True,True,False,False,2.0
-BitRate (Zayn Bitrate Fund),Bagallery,E-commerce,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
-CIO Angel Fund,Mauqa Online,On-demand,"Islamabad, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
-Plug and Play,Smartchoice.pk,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
-Wamda Capital,BYKEA,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
-10xC,Mauqa Online,On-demand,"Islamabad, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
-Sequoia Capital Surge,BridgeLinx,Logistics,"Lahore, Pakistan",Seed,51-100,2020,True,False,False,False,True,True,False,False,2.0
-Mentors Fund,ContentStudio,MarTech,"Islamabad, Pakistan",N/A,11-50,2017,True,False,False,True,False,False,False,True,0.0
-PakLaunch (PakLaunch Investors),SafePay,Fintech,"Karachi, Pakistan",Acquired,11-50,2019,True,False,False,False,True,False,False,True,0.0
-Accelerating Asia,DeafTawk,Social Tech,"Islamabad, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
-Endeavor Catalyst,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
-Acumen Fund,WonderTree,EdTech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,True,False,False,2.0
-Karandaaz Pakistan,Oraan,Fintech,"Karachi, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
-Techstars,APIMatic,Developer Tools,"San Francisco, USA",Series A,51-100,2014,True,False,False,True,False,False,False,True,3.0
-Falcon Network,BoloTech,EdTech,"Karachi, Pakistan",N/A,11-50,2019,False,True,True,False,False,True,False,False,0.0
-Dubai Angel Investors,BeautyHooked,E-commerce,"Lahore, Pakistan",Seed,11-50,2016,False,True,True,False,False,True,False,False,2.0
-Tharros,BYKEA,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
-Ithaca Capital,BYKEA,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
-Sary,Jugnu (Sales Junction),E-commerce,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
-Hayaat Global,Bagallery,E-commerce,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
-VentureSouq,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
-Sturgeon Capital,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
-Rallycap,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
-FJ Labs,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
-Nubank,Dbank,Fintech,"Islamabad, Pakistan",Series A,11-50,2021,False,True,True,False,False,True,False,False,3.0
-Acrew Capital,Bazaar Technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
-Antler,Outclass,EdTech,"Karachi, Pakistan",Pre-Seed,11-50,2021,False,True,True,False,False,True,False,False,1.0
-Abercross Holdings,Retailo,Commerce,"Riyadh, Saudi Arabia",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
-Global Ventures,Abhi Finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
-Knollwood Investment,Airlift Technologies,Logistics,"Lahore, Pakistan",Series B (Defunct),100+,2019,False,True,True,False,False,False,False,True,0.0
+Indus Valley Capital,taleemi mela,EdTech,"Karachi, Pakistan",Seed,<10,2023,False,True,True,False,False,True,False,False,2.0
+Indus Valley Capital,abhi finance,Fintech,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Indus Valley Capital,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
+Sarmayacar,24seven.pk,E-commerce,"Karachi, Pakistan",Pre-Series A,<10,2020,False,True,True,False,False,True,False,False,0.0
+Sarmayacar,daraz,E-commerce,"Karachi, Pakistan",Series C,100+,2015,False,True,True,False,False,False,False,True,5.0
+Sarmayacar,homestyle,FinTech,"Lahore, Pakistan",Series A,30-50,2019,False,True,True,False,False,False,False,True,3.0
+Fatima Gobi Ventures,tajir,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Fatima Gobi Ventures,zayn capital,Logistics,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Fatima Gobi Ventures,educative,EdTech,"Seattle, USA",Series A,30-50,2019,False,True,True,False,False,False,False,True,3.0
+Zayn Capital,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
+Zayn Capital,zarya,E-commerce,"Lahore, Pakistan",N/A,N/A,N/A,False,True,True,False,False,True,False,False,0.0
+Zayn Capital,kalsoom,AgriTech,"Lahore, Pakistan",Seed,<10,2023,True,False,False,False,True,True,False,False,2.0
+i2i Ventures,safepay,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,True,False,False,False,True,True,False,False,1.0
+i2i Ventures,savyour,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+i2i Ventures,demo,Tech,"Islamabad, Pakistan",,N/A,N/A,False,True,True,False,False,False,False,True,0.0
+Lakson Venture Capital,bykea,Mobility,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Lakson Venture Capital,dawaai,Healthtech,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+TPL e-Ventures,trukkr,Logistics,"Karachi, Pakistan",Pre-Series A,<10,2020,True,False,False,False,True,True,False,False,0.0
+TPL e-Ventures,muawin,Fintech,"Karachi, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
+TPL e-Ventures,tajir,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Deosai Ventures,oraan,Fintech,"Karachi, Pakistan",Pre-Series A,<10,2020,False,True,True,False,False,True,False,False,0.0
+Deosai Ventures,sukoon,Healthcare,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+47 Ventures,zeenat,,,,N/A,N/A,False,True,True,False,False,True,False,False,0.0
+47 Ventures,kalpay,Fintech,"Karachi, Pakistan",Seed,<10,2023,False,True,True,False,False,True,False,False,2.0
+Cordoba Ventures,sehat kahani,Healthtech,"Karachi, Pakistan",Series A,100+,2015,False,True,True,False,False,False,False,True,3.0
+Cordoba Ventures,dot & line,EdTech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Planet N Group,kuzaco,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Planet N Group,tez financial,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+CresVentures,qisstpay,Fintech,"Islamabad, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Walled City Co.,swipe,Fintech,"Lahore, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Pakistan Investment Network,publishex,Tech,"Islamabad, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
+Teamup Angels,smartchoice.pk,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
+Teamup Angels,edkasa,EdTech,"Lahore, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Pakistani Angels (Pak Angels),hackpractice,Tech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
+Pakistani Angels (Pak Angels),skool.pk,EdTech,"Karachi, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
+TiE Islamabad Angels,ypay,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
+TiE Islamabad Angels,mauqa online,Tech,"Islamabad, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Pakistan Business Angel Network,ezbuy,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Y Combinator,airlift technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Y Combinator,cowlar (anzen),IoT/AgriTech,"Islamabad, Pakistan",Seed,<10,2023,True,False,False,False,True,True,False,False,2.0
+Y Combinator,oraan,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+500 Global (500 Startups),safepay,Fintech,"Karachi, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
+500 Global (500 Startups),wukla,LegalTech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Ignite National Technology Fund,tellotalk,Tech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Ignite National Technology Fund,aqua agro,AgriTech,"Lahore, Pakistan",Seed,10-30,2021,True,False,False,False,True,True,False,False,2.0
+International Finance Corporation,tradedepot,E-commerce,"Lagos, Nigeria",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
+International Finance Corporation,fawry,FinTech,"Cairo, Egypt",Growth,100+,2014,False,True,True,False,False,False,False,True,8.0
+International Finance Corporation,techconnect,Tech,"Washington, DC, USA",Series B,50-100,2017,True,False,False,True,False,False,False,True,4.0
+Shorooq Partners,pureharvest,AgriTech,"Abu Dhabi, UAE",Series A,30-50,2019,True,False,False,True,False,False,False,True,3.0
+Shorooq Partners,bitoasis,FinTech,"Dubai, UAE",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Shorooq Partners,softsolutions,Software,"Abu Dhabi, UAE",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+VEF (Vostok Emerging Finance),jumo,FinTech,"Cape Town, South Africa",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+VEF (Vostok Emerging Finance),konfio,FinTech,"Mexico City, Mexico",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
+VEF (Vostok Emerging Finance),inclusionx,Financial Inclusion,"Stockholm, Sweden",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+Quona Capital,klar,FinTech,"Mexico City, Mexico",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Quona Capital,alloy,FinTech,"New York, USA",Series B,50-100,2017,True,False,False,True,False,False,False,True,4.0
+Quona Capital,credall,Financial Inclusion,"Washington, DC, USA",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+BeeNext,xendit,FinTech,"Jakarta, Indonesia",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
+BeeNext,zilingo,E-commerce,"Singapore, Singapore",Series C,100+,2015,False,True,True,False,False,False,False,True,5.0
+BeeNext,shophub,E-commerce,"Singapore, Singapore",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Wamda Capital,abhi finance,Fintech,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Wamda Capital,next (next degree),IT Services,"Karachi, Pakistan",N/A,N/A,N/A,True,False,False,True,False,False,False,True,0.0
+Wamda Capital,assignme,EdTech,"Karachi, Pakistan",N/A,N/A,N/A,False,True,True,False,False,True,False,False,0.0
+BECO Capital,yayvo,E-commerce,"Karachi, Pakistan",N/A,N/A,N/A,False,True,True,False,False,False,False,True,0.0
+BECO Capital,10xc,Fintech,"Karachi, Pakistan",,10-30,2021,False,True,True,False,False,False,False,True,0.0
+Flat6Labs,xylexa,Healthtech,"Islamabad, Pakistan",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+Flat6Labs,byte,Foodtech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Flat6Labs,canary tech,IT Services,"Rawalpindi, Pakistan",N/A,N/A,N/A,True,False,False,True,False,False,False,True,0.0
+Alan Rutledge (Angel),jugnu,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Altaf Khan (Angel),shopsy.pk,E-commerce,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
+Ameer Hamza Sadiq (Angel),find my adventure,Traveltech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,False,False,True,2.0
+B&Y Venture Partners,investors lounge,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Buckley Ventures,airlift technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Canaan Partners,tajir,E-commerce,"Lahore, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Conjunction Capital,integry,SaaS,"San Francisco, USA",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+Defy Partners,sehat kahani,Healthtech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Glowfish Labs (Venture Studio),prizebonds,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
+Karachi Angels Network,blink,E-commerce,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Lahore Angels Network,trashit,CleanTech,"Lahore, Pakistan",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+M. Shahzad (Angel),dot & line,EdTech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Nadeem Hussain (Angel),tez financial,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Shehryar Hydri (Angel),work hall,PropTech,"Lahore, Pakistan",Seed,10-30,2021,False,True,True,False,False,False,False,True,2.0
+Acrew Capital,trellis housing finance,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Addition (Lee Fixel),bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,50-100,2017,True,False,False,False,True,False,False,True,4.0
+Antler,hysab kytab,Fintech,"Karachi, Pakistan",Pre-Seed,<10,2023,False,True,True,False,False,True,False,False,1.0
+Banana Capital,bazaar technologies,E-commerce,"Karachi, Pakistan",Series A,30-50,2019,True,False,False,False,True,False,False,True,3.0
+Bastian Lehmann (Angel),airlift technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Biz Stone (Angel),airlift technologies,Logistics,"Lahore, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Elahi Group,trellis housing finance,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Kingsway Capital,bykea,Mobility,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+MDI Ventures,trellis housing finance,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+Middle East Venture Partners (MEVP),bykea,Mobility,"Karachi, Pakistan",Series B,50-100,2017,False,True,True,False,False,False,False,True,4.0
+Nama Ventures,integry,SaaS,"San Francisco, USA",Seed,10-30,2021,True,False,False,True,False,True,False,False,2.0
+Oikocredit,tez financial,Fintech,"Karachi, Pakistan",Seed,10-30,2021,False,True,True,False,False,True,False,False,2.0
+BEENEXT,finja,Fintech,"Lahore, Pakistan",Series A,11-50,2019,True,False,False,False,True,False,False,True,3.0
+Middle East Venture Partners,bykea,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
+United Capital Partners (UCP),cheetay,E-commerce,"Lahore, Pakistan",Pre-Series A,11-50,2018,False,True,True,False,False,False,False,True,0.0
+Turret Capital,cheetay,E-commerce,"Lahore, Pakistan",Pre-Series A,11-50,2018,False,True,True,False,False,False,False,True,0.0
+Afore Capital,creditbook,Fintech,"Karachi, Pakistan",Series A,11-50,2019,True,False,False,False,True,False,False,True,3.0
+VEON Ventures,dastgyr,B2B E-commerce,"Lahore, Pakistan",Series A,51-100,2018,True,False,False,False,True,False,False,True,3.0
+SOSV,dastgyr,B2B E-commerce,"Lahore, Pakistan",Series A,11-50,2018,True,False,False,False,True,False,False,True,3.0
+Habib Bank Limited (HBL),finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
+Systems Limited,jugnu (sales junction),E-commerce,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
+Shorooq Partners,retailo,Commerce,"Riyadh, Saudi Arabia",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
+MSA Capital,postex,Fintech,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
+Global Founders Capital,truck it in,Logistics,"Karachi, Pakistan",Seed,11-50,2020,True,False,False,False,True,True,False,False,2.0
+Institutional Venture Partners (IVP),motive (keeptruckin),Logistics,"San Francisco, USA",Series E,100+,2014,True,False,False,True,False,False,True,False,7.0
+Graphene Ventures,nayapay,Fintech,"Karachi, Pakistan",Seed,51-100,2018,False,True,True,False,False,True,False,False,2.0
+Meran Bank,nayapay,Fintech,"Karachi, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
+Wavemaker Partners,oraan,Fintech,"Karachi, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
+RTP Global,postex,Fintech,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
+JS Group,priceoye,E-commerce,"Islamabad, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
+Valar Ventures,qisstpay,Fintech,"Islamabad, Pakistan",Series A,51-100,2020,False,True,True,False,False,False,False,True,3.0
+VentureDive,qisstpay,Fintech,"Islamabad, Pakistan",Series A,51-100,2020,False,True,True,False,False,False,False,True,3.0
+Recharge Capital,sadapay,Fintech,"Islamabad, Pakistan",Seed,51-100,2019,False,True,True,False,False,True,False,False,2.0
+Defy.vc,sadapay,Fintech,"Islamabad, Pakistan",Seed,51-100,2019,False,True,True,False,False,True,False,False,2.0
+Elahi Group,sehat kahani,Healthtech,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
+Impact Investment Exchange (IIX),sehat kahani,Healthtech,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
+Vibe Capital,tazah,AgriTech,"Lahore, Pakistan",Seed,11-50,2021,True,False,False,False,True,True,False,False,2.0
+Haitou Global,trukkr,Fintech,"Karachi, Pakistan",Seed,11-50,2021,True,False,False,False,True,True,False,False,2.0
+Picus Capital,truck it in,Logistics,"Karachi, Pakistan",Seed,11-50,2020,True,False,False,False,True,True,False,False,2.0
+Derayah Venture Capital,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
+Next Billion Ventures,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
+S7 Ventures,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
+Quiet Capital,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Liberty City Ventures,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Polymath Digital,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Banana Capital,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Khwarizmi Ventures,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Canaan Partners,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Addition,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Mantis VC,tag (tag innovation),Fintech,"Islamabad, Pakistan",Seed,11-50,2020,False,True,True,False,False,True,False,False,2.0
+Quona Capital,finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
+ICU Ventures,finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
+Gray Mackenzie Engineering,finja,Fintech,"Lahore, Pakistan",Series A,51-100,2016,True,False,False,False,True,False,False,True,3.0
+Omidyar Network,tez financial services,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
+Accion Venture Lab,tez financial services,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
+Flourish Ventures,tez financial services,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
+Kinnow Capital,snappretail,E-commerce,"Karachi, Pakistan",Seed,11-50,2021,True,False,False,False,True,True,False,False,2.0
+BitRate (Zayn Bitrate Fund),bagallery,E-commerce,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
+CIO Angel Fund,mauqa online,On-demand,"Islamabad, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
+Plug and Play,smartchoice.pk,Fintech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,False,False,True,2.0
+Wamda Capital,bykea,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
+10xC,mauqa online,On-demand,"Islamabad, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
+Sequoia Capital Surge,bridgelinx,Logistics,"Lahore, Pakistan",Seed,51-100,2020,True,False,False,False,True,True,False,False,2.0
+Mentors Fund,contentstudio,MarTech,"Islamabad, Pakistan",N/A,11-50,2017,True,False,False,True,False,False,False,True,0.0
+PakLaunch (PakLaunch Investors),safepay,Fintech,"Karachi, Pakistan",Acquired,11-50,2019,True,False,False,False,True,False,False,True,0.0
+Accelerating Asia,deaftawk,Social Tech,"Islamabad, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
+Endeavor Catalyst,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
+Acumen Fund,wondertree,EdTech,"Karachi, Pakistan",Seed,11-50,2016,False,True,True,False,False,True,False,False,2.0
+Karandaaz Pakistan,oraan,Fintech,"Karachi, Pakistan",Seed,11-50,2018,False,True,True,False,False,True,False,False,2.0
+Techstars,apimatic,Developer Tools,"San Francisco, USA",Series A,51-100,2014,True,False,False,True,False,False,False,True,3.0
+Falcon Network,bolotech,EdTech,"Karachi, Pakistan",N/A,11-50,2019,False,True,True,False,False,True,False,False,0.0
+Dubai Angel Investors,beautyhooked,E-commerce,"Lahore, Pakistan",Seed,11-50,2016,False,True,True,False,False,True,False,False,2.0
+Tharros,bykea,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
+Ithaca Capital,bykea,Mobility,"Karachi, Pakistan",Series B,51-100,2017,False,True,True,False,False,False,False,True,4.0
+Sary,jugnu (sales junction),E-commerce,"Lahore, Pakistan",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
+Hayaat Global,bagallery,E-commerce,"Karachi, Pakistan",Series A,51-100,2017,False,True,True,False,False,False,False,True,3.0
+VentureSouq,abhi finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
+Sturgeon Capital,abhi finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
+Rallycap,abhi finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
+FJ Labs,abhi finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
+Nubank,dbank,Fintech,"Islamabad, Pakistan",Series A,11-50,2021,False,True,True,False,False,True,False,False,3.0
+Acrew Capital,bazaar technologies,E-commerce,"Karachi, Pakistan",Series B,51-100,2020,True,False,False,False,True,False,False,True,4.0
+Antler,outclass,EdTech,"Karachi, Pakistan",Pre-Seed,11-50,2021,False,True,True,False,False,True,False,False,1.0
+Abercross Holdings,retailo,Commerce,"Riyadh, Saudi Arabia",Series A,51-100,2020,True,False,False,False,True,False,False,True,3.0
+Global Ventures,abhi finance,Fintech,"Karachi, Pakistan",Series A,51-100,2021,True,False,False,False,True,False,False,True,3.0
+Knollwood Investment,airlift technologies,Logistics,"Lahore, Pakistan",Series B (Defunct),100+,2019,False,True,True,False,False,False,False,True,0.0
