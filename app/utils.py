@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 def load_data():
-    investor_df = pd.read_csv("data/investors_encoded.csv")
-    interaction_matrix = pd.read_csv("data/interaction_matrix.csv", index_col=0)
+    investor_df = pd.read_csv("./app/data/investors_encoded.csv")
+    interaction_matrix = pd.read_csv("./app/data/interaction_matrix.csv", index_col=0)
 
     # Extract only encoded columns
     encoded_cols = [c for c in investor_df.columns if c.startswith("Industry_") or c.startswith("Stage_")]

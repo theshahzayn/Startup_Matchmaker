@@ -1,10 +1,14 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # ✅ Import CORS
-from recommender_engine import recommend_content, recommend_collaborative, recommend_hybrid
+from flask_cors import CORS
+from recommender_engine import (
+    recommend_content,
+    recommend_collaborative,
+    recommend_hybrid,
+    recommend_similar_startups
+)
 
 app = Flask(__name__)
-CORS(app)  
-
+CORS(app)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -22,12 +26,14 @@ def recommend():
             result = recommend_collaborative(data)
         elif rs_type == "hybrid":
             result = recommend_hybrid(data)
+        elif rs_type == "startup_similarity":
+            # Now uses industries & stages directly
+            result = recommend_similar_startups(data)
         else:
-            return jsonify({"error": "Invalid rs_type. Use: content, collaborative, hybrid"}), 400
-        
-        print("Result: ", result)
+            return jsonify({"error": "Invalid rs_type. Use: content, collaborative, hybrid, startup_similarity"}), 400
+
         return jsonify({"recommendations": result})
-    
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
