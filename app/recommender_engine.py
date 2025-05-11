@@ -1,186 +1,140 @@
-import pandas as pd
+import json
+import os
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from collections import Counter
-from utils import load_data, encode_input
+from utils import full_preprocess
+import logging
 
-# -----------------------------
-# Load Data
-# -----------------------------
-investor_df, investor_features, interaction_matrix = load_data()
-startup_df = pd.read_csv("./app/data/interactions_encoded.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
-# -----------------------------
-# Normalize Investor Data
-# -----------------------------
-investor_df["Recent Activity Year"]   = investor_df["Recent Activity Year"].fillna(2000)
-investor_df["Number of Investments"]  = investor_df["Number of Investments"].fillna(0)
-investor_df["Norm_Activity"]          = (
-    investor_df["Recent Activity Year"] - investor_df["Recent Activity Year"].min()
-) / (investor_df["Recent Activity Year"].max() - investor_df["Recent Activity Year"].min())
-investor_df["Norm_Investments"]       = (
-    investor_df["Number of Investments"] - investor_df["Number of Investments"].min()
-) / (investor_df["Number of Investments"].max() - investor_df["Number of Investments"].min())
+INVESTOR_CACHE_FILE = os.path.join(DATA_DIR, "preprocessed_investors.json")
+STARTUP_CACHE_FILE = os.path.join(DATA_DIR, "preprocessed_startups.json")
+INTERACTIONS_FILE = os.path.join(DATA_DIR, "interactions.json")
 
-enhanced_features = investor_features.copy()
-enhanced_features["Norm_Activity"]     = investor_df["Norm_Activity"]
-enhanced_features["Norm_Investments"]  = investor_df["Norm_Investments"]
+INVESTORS = []
+STARTUPS = []
+INTERACTIONS = {}
 
-# -----------------------------
-# Content-Based Recommender
-# -----------------------------
-def recommend_content(input_data, top_k=6):
-    encoded = encode_input(input_data, investor_features.columns)
+def load_data():
+    global INVESTORS, STARTUPS, INTERACTIONS
+    with open(INVESTOR_CACHE_FILE, "r") as f1:
+        INVESTORS = json.load(f1)
+    with open(STARTUP_CACHE_FILE, "r") as f2:
+        STARTUPS = json.load(f2)
+    with open(INTERACTIONS_FILE, "r") as f3:
+        INTERACTIONS = json.load(f3)
 
-    # Rebuild query vector to match enhanced_features shape
-    query_vec = encoded + [
-        float(input_data.get("activityWeight", 0.5)),
-        float(input_data.get("investmentWeight", 0.5))
+load_data()
+
+def compute_similarity(vec1, vec2):
+    if not vec1 or not vec2 or not any(vec1) or not any(vec2):
+        return 0.0
+    try:
+        return float(cosine_similarity([vec1], [vec2])[0][0])
+    except Exception as e:
+        logging.warning(f"Similarity error: {e}")
+        return 0.0
+
+def format_investor_result(score, inv):
+    return {
+        "id": inv.get("id"),
+        "Investor Name": inv.get("Name", "N/A"),
+        "Location": inv.get("Location", "N/A"),
+        "Score": round(score, 3),
+        "Investor Bio": inv.get("Investor Bio", "—"),
+        "Past Investment Types": inv.get("Past Investment Types", "—"),
+        "Investment Stages": inv.get("Investment Stages", "—")
+    }
+
+def calculate_similarity_score(encoded_input, encoded_target):
+    weights = {
+        "industry_vec": 0.4,
+        "stage_vec": 0.2,
+        "location_vec": 0.15,
+        "team_vec": 0.15,
+        "year_vec": 0.1
+    }
+
+    score = 0.0
+    for key, weight in weights.items():
+        sim = compute_similarity(encoded_input.get(key, []), encoded_target.get(key, []))
+        score += weight * sim
+    return score
+
+def recommend_by_content(encoded_input, top_k=10):
+    scores = []
+    for inv in INVESTORS:
+        inv_vecs = inv["processed"]["encoded"]
+        score = calculate_similarity_score(encoded_input, inv_vecs)
+        if score > 0.1:
+            scores.append((score, inv))
+    sorted_results = sorted(scores, key=lambda x: x[0], reverse=True)
+    return [format_investor_result(score, inv) for score, inv in sorted_results[:top_k]]
+
+def recommend_by_collaborative(encoded_input, top_k=10):
+    score_map = {}
+    for startup in STARTUPS:
+        s_vecs = startup["processed"]["encoded"]
+        sim = calculate_similarity_score(encoded_input, s_vecs)
+        if sim > 0.1:
+            startup_id = startup.get("startup_id")
+            for inv_id in INTERACTIONS.get(startup_id, []):
+                score_map[inv_id] = score_map.get(inv_id, 0) + sim
+    sorted_results = sorted([(score, INVESTORS[inv_id]) for inv_id, score in score_map.items()], key=lambda x: x[0], reverse=True)
+    return [format_investor_result(score, inv) for score, inv in sorted_results[:top_k]]
+
+def recommend_by_hybrid(encoded_input, activity_weight=0.5, investment_weight=0.5, top_k=10):
+    content_scores = recommend_by_content(encoded_input, top_k=top_k * 2)
+    collaborative_scores = recommend_by_collaborative(encoded_input, top_k=top_k * 2)
+
+    content_dict = {c["id"]: c for c in content_scores}
+    hybrid_results = []
+
+    for collab in collaborative_scores:
+        inv_id = collab["id"]
+        content_score = content_dict.get(inv_id, {}).get("Score", 0)
+        hybrid_score = activity_weight * content_score + investment_weight * collab["Score"]
+        collab["Score"] = round(hybrid_score, 3)
+        hybrid_results.append(collab)
+
+    return sorted(hybrid_results, key=lambda x: x["Score"], reverse=True)[:top_k]
+
+def recommend_similar_startups(input_data, top_k=10):
+    encoded_input = input_data["encoded"]
+    scores = []
+    for s in STARTUPS:
+        s_vecs = s["processed"]["encoded"]
+        score = calculate_similarity_score(encoded_input, s_vecs)
+        scores.append((score, s))
+    sorted_results = sorted(scores, key=lambda x: x[0], reverse=True)
+    return [
+        {
+            "Startup Name": s.get("Startup Name", "N/A"),
+            "Industry": s.get("Industry", "—"),
+            "Location": s.get("Location", "—"),
+            "Funding Stage": s.get("Funding Stage", "—"),
+            "Score": round(score, 3),
+            "Investor": s.get("investor_name", "—")
+        }
+        for score, s in sorted_results[:top_k]
     ]
 
-    if len(query_vec) != enhanced_features.shape[1]:
-        raise ValueError("Encoded input does not match feature matrix dimensions.")
+def get_recommendations(data: dict, top_k: int = 6):
+    rs_type = data.get("rs_type", "content")
+    encoded_input = data["processed"]["encoded"]
 
-    scores = cosine_similarity([query_vec], enhanced_features.values).flatten()
-
-    # -----------------------------
-    # Location bonus (optional column)
-    user_location = input_data.get("location", "").strip().lower()
-    if "Location" in investor_df.columns:
-        location_bonus = np.array([
-            0.05 if user_location and user_location in str(loc).strip().lower() else 0.0
-            for loc in investor_df["Location"]
-        ])
-    else:
-        location_bonus = np.zeros(len(investor_df))
-
-    # -----------------------------
-    # Team size similarity (if team data available)
-    try:
-        team_size = float(input_data.get("teamSize", 10))
-        if "Avg Team Size" in investor_df.columns and "Norm_TeamSize" in investor_df.columns:
-            team_scaled = (team_size - investor_df["Avg Team Size"].min()) / (
-                investor_df["Avg Team Size"].max() - investor_df["Avg Team Size"].min() + 1e-8
-            )
-            team_similarity = 1 - abs(investor_df["Norm_TeamSize"] - team_scaled)
-        else:
-            team_similarity = np.zeros(len(investor_df))
-    except:
-        team_similarity = np.zeros(len(investor_df))
-
-    # -----------------------------
-    # Final scoring
-    final_scores = scores * 0.85 + location_bonus + team_similarity * 0.1
-    top_idxs = np.argsort(final_scores)[::-1][:top_k]
-
-    results = []
-    for i in top_idxs:
-        r = investor_df.iloc[i]
-        results.append({
-            "Investor Name": str(r.get("Investor Name", "N/A")),
-            "Location": str(r.get("Location", "N/A")),
-            "Ticket Size": str(r.get("Ticket Size", "N/A")),
-            "Recent Activity Year": int(r.get("Recent Activity Year", 0)),
-            "Number of Investments": int(r.get("Number of Investments", 0)),
-            "Score": float(round(final_scores[i], 3))
-        })
-    return results
-
-
-# -----------------------------
-# Collaborative Recommender
-# -----------------------------
-def recommend_collaborative(input_data, top_k=6):
-    ranked = interaction_matrix.sum(axis=0).sort_values(ascending=False)[:top_k]
-    results = []
-    for investor, score in ranked.items():
-        row = investor_df[investor_df["Investor Name"] == investor]
-        if not row.empty:
-            r = row.iloc[0]
-            results.append({
-                "Investor Name":            str(investor),
-                "Score":                    int(score),
-                "Location":                 str(r["Location"]),
-                "Ticket Size":              str(r["Ticket Size"]),
-                "Recent Activity Year":     int(r["Recent Activity Year"]),
-                "Number of Investments":    int(r["Number of Investments"])
-            })
-    return results
-
-# -----------------------------
-# Hybrid Recommender
-# -----------------------------
-def recommend_hybrid(input_data, top_k=6):
-    try:
-        content_scores = recommend_content(input_data, top_k=20)
-    except Exception as e:
-        print("Content-based failed:", e)
-        content_scores = []
-
-    try:
-        collab_scores  = recommend_collaborative(input_data, top_k=20)
-    except Exception as e:
-        print("Collaborative failed:", e)
-        collab_scores = []
-
-    merged = {}
-    for rec in content_scores:
-        merged[rec["Investor Name"]] = merged.get(rec["Investor Name"], 0) + rec["Score"] * 0.6
-    for rec in collab_scores:
-        merged[rec["Investor Name"]] = merged.get(rec["Investor Name"], 0) + rec["Score"] * 0.4
-
-    top_pairs = sorted(merged.items(), key=lambda x: x[1], reverse=True)[:top_k]
-    results = []
-    for name, score in top_pairs:
-        row = investor_df[investor_df["Investor Name"] == name]
-        if not row.empty:
-            r = row.iloc[0]
-            results.append({
-                "Investor Name": name,
-                "Score": float(round(score, 3)),
-                "Location": str(r.get("Location", "N/A")),
-                "Ticket Size": str(r.get("Ticket Size", "N/A")),
-                "Recent Activity Year": int(r.get("Recent Activity Year", 0)),
-                "Number of Investments": int(r.get("Number of Investments", 0))
-            })
-    return results
-
-
-# -----------------------------
-# Startup Similarity Recommender (Fixed to return startups, not investors)
-# -----------------------------
-startup_profiles = pd.read_csv("./app/data/startups_profiles.csv")
-startup_features = pd.read_csv("./app/data/startups_features.csv")
-
-def recommend_similar_startups(input_data, top_k=6):
-    industries = input_data.get("industries", [])
-    stages     = input_data.get("stages", [])
-
-    # Build query vector
-    query_vector = []
-    for col in startup_features.columns:
-        if col.startswith("Industry_"):
-            query_vector.append(1 if col.replace("Industry_", "") in industries else 0)
-        elif col == "Funding Stage Numeric":
-            # Use the average stage index of selected stages
-            stage_map = {"Pre-Seed": 1, "Seed": 2, "Series A": 3, "Series B": 4, "Series C": 5, "Growth": 6}
-            numeric_stage = np.mean([stage_map.get(stage, 0) for stage in stages]) if stages else 0
-            query_vector.append(numeric_stage)
-        else:
-            query_vector.append(0)
-
-    scores   = cosine_similarity([query_vector], startup_features.values).flatten()
-    top_idxs = np.argsort(scores)[::-1][:top_k]
-
-    recommendations = []
-    for idx in top_idxs:
-        row = startup_profiles.iloc[idx]
-        recommendations.append({
-            "Startup Name":     row["Startup Name"],
-            "Industry":         row["Industry"],
-            "Funding Stage":    row["Funding Stage Numeric"],
-            "Similarity Score": round(scores[idx], 3)
-        })
-
-    return recommendations
-
+    if rs_type == "content":
+        return recommend_by_content(encoded_input, top_k)
+    elif rs_type == "collaborative":
+        return recommend_by_collaborative(encoded_input, top_k)
+    elif rs_type == "hybrid":
+        return recommend_by_hybrid(
+            encoded_input,
+            data.get("activityWeight", 0.5),
+            data.get("investmentWeight", 0.5),
+            top_k
+        )
+    elif rs_type == "startup_similarity":
+        return recommend_similar_startups(data["processed"], top_k)
+    return []
