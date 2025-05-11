@@ -1,0 +1,78 @@
+{
+  "industries": [
+    "Agritech",
+    "Consumer",
+    "Consumer Internet",
+    "E-Commerce",
+    "Edtech",
+    "Education",
+    "Financial Inclusion",
+    "Fintech",
+    "Healthcare",
+    "Healthtech",
+    "Ict",
+    "Impact",
+    "Logistics",
+    "Martech",
+    "Media",
+    "Mobility",
+    "On-Demand",
+    "Platforms",
+    "Proptech",
+    "Retailtech",
+    "Sector Agnostic",
+    "Seed",
+    "Series B",
+    "Social Tech",
+    "Software",
+    "Tech",
+    "Technology",
+    "Technology (Sector Agnostic)",
+    "Various"
+  ],
+  
+  "stages": [
+    "Accelerator",
+    "Growth",
+    "Pre-Seed",
+    "Seed",
+    "Series A",
+    "Series B",
+    "Series C"
+  ],
+  "business_models": [
+    "B2B",
+    "B2C"
+  ],
+  "customer_segments": [
+    "Consumers",
+    "Enterprises",
+    "Smes"
+  ],
+  "revenue_stages": [
+    "Pre-Revenue",
+    "Profitable",
+    "Revenue-Generating"
+  ],
+  "locations": [
+    "Brazil",
+    "Canada",
+    "China",
+    "Egypt",
+    "Germany",
+    "Global (Pakistani Diaspora)",
+    "Greece",
+    "India",
+    "Indonesia",
+    "Lebanon",
+    "Netherlands",
+    "Pakistan",
+    "Russia",
+    "Saudi Arabia",
+    "Singapore",
+    "Sweden",
+    "UAE",
+    "UK",
+    "USA"
+  ]
+}

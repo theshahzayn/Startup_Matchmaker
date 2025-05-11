@@ -24,7 +24,11 @@ export default function App() {
   const [activityWeight, setActivityWeight] = useState(0.5);
   const [investmentWeight, setInvestmentWeight] = useState(0.5);
   const [results, setResults] = useState([]);
+  const [teamSize, setTeamSize] = useState("");
+  const [foundedYear, setFoundedYear] = useState("");
+  const [location, setLocation] = useState("");
   const [loading, setLoading] = useState(false);
+  const [businessModel, setBusinessModel] = useState("");
 
   const toggle = (list, item, setter) =>
     setter(list.includes(item) ? list.filter(i => i !== item) : [...list, item]);
@@ -37,8 +41,13 @@ export default function App() {
         stages,
         rs_type: rsType,
         activityWeight,
-        investmentWeight
+        investmentWeight,
+        teamSize,
+        foundedYear,
+        location,
+        businessModel
       };
+      
   
       const res = await axios.post("http://127.0.0.1:5000/recommend", payload);
   
@@ -155,6 +164,55 @@ export default function App() {
               </option>
             ))}
           </select>
+        </section>
+
+        
+        {/* Team Size */}
+        <section>
+          <label className="text-sm uppercase text-gray-400 block mb-2">Team Size</label>
+          <input
+            type="number"
+            value={teamSize}
+            onChange={e => setTeamSize(e.target.value)}
+            className="w-full bg-gray-800 text-white p-2 rounded-lg border border-gray-600"
+            placeholder="Enter team size"
+          />
+        </section>
+
+        {/* Founded Year */}
+        <section>
+          <label className="text-sm uppercase text-gray-400 block mb-2">Founded Year</label>
+          <input
+            type="number"
+            value={foundedYear}
+            onChange={e => setFoundedYear(e.target.value)}
+            className="w-full bg-gray-800 text-white p-2 rounded-lg border border-gray-600"
+            placeholder="Enter year"
+          />
+        </section>
+
+        {/* Location */}
+        <section>
+          <label className="text-sm uppercase text-gray-400 block mb-2">Startup Location</label>
+          <input
+            type="text"
+            value={location}
+            onChange={e => setLocation(e.target.value)}
+            className="w-full bg-gray-800 text-white p-2 rounded-lg border border-gray-600"
+            placeholder="City or Country"
+          />
+        </section>
+
+        {/* Business Model */}
+        <section>
+          <label className="text-sm uppercase text-gray-400 block mb-2">Business Model</label>
+          <input
+            type="text"
+            value={businessModel}
+            onChange={e => setBusinessModel(e.target.value)}
+            className="w-full bg-gray-800 text-white p-2 rounded-lg border border-gray-600"
+            placeholder="e.g. B2B, B2C, Marketplace"
+          />
         </section>
 
         {/* Submit */}

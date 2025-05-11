@@ -30,26 +30,62 @@ enhanced_features["Norm_Investments"]  = investor_df["Norm_Investments"]
 # Content-Based Recommender
 # -----------------------------
 def recommend_content(input_data, top_k=6):
-    encoded   = encode_input(input_data, investor_features.columns)
-    activity  = input_data.get("activityWeight", 0.5)
-    investment= input_data.get("investmentWeight", 0.5)
-    query_vec = encoded + [activity, investment]
+    encoded = encode_input(input_data, investor_features.columns)
 
-    scores     = cosine_similarity([query_vec], enhanced_features.values).flatten()
-    top_idxs   = np.argsort(scores)[::-1][:top_k]
+    # Rebuild query vector to match enhanced_features shape
+    query_vec = encoded + [
+        float(input_data.get("activityWeight", 0.5)),
+        float(input_data.get("investmentWeight", 0.5))
+    ]
+
+    if len(query_vec) != enhanced_features.shape[1]:
+        raise ValueError("Encoded input does not match feature matrix dimensions.")
+
+    scores = cosine_similarity([query_vec], enhanced_features.values).flatten()
+
+    # -----------------------------
+    # Location bonus (optional column)
+    user_location = input_data.get("location", "").strip().lower()
+    if "Location" in investor_df.columns:
+        location_bonus = np.array([
+            0.05 if user_location and user_location in str(loc).strip().lower() else 0.0
+            for loc in investor_df["Location"]
+        ])
+    else:
+        location_bonus = np.zeros(len(investor_df))
+
+    # -----------------------------
+    # Team size similarity (if team data available)
+    try:
+        team_size = float(input_data.get("teamSize", 10))
+        if "Avg Team Size" in investor_df.columns and "Norm_TeamSize" in investor_df.columns:
+            team_scaled = (team_size - investor_df["Avg Team Size"].min()) / (
+                investor_df["Avg Team Size"].max() - investor_df["Avg Team Size"].min() + 1e-8
+            )
+            team_similarity = 1 - abs(investor_df["Norm_TeamSize"] - team_scaled)
+        else:
+            team_similarity = np.zeros(len(investor_df))
+    except:
+        team_similarity = np.zeros(len(investor_df))
+
+    # -----------------------------
+    # Final scoring
+    final_scores = scores * 0.85 + location_bonus + team_similarity * 0.1
+    top_idxs = np.argsort(final_scores)[::-1][:top_k]
 
     results = []
     for i in top_idxs:
         r = investor_df.iloc[i]
         results.append({
-            "Investor Name":            str(r["Investor Name"]),
-            "Location":                 str(r["Location"]),
-            "Ticket Size":              str(r["Ticket Size"]),
-            "Recent Activity Year":     int(r["Recent Activity Year"]),
-            "Number of Investments":    int(r["Number of Investments"]),
-            "Score":                    float(round(scores[i], 3))
+            "Investor Name": str(r.get("Investor Name", "N/A")),
+            "Location": str(r.get("Location", "N/A")),
+            "Ticket Size": str(r.get("Ticket Size", "N/A")),
+            "Recent Activity Year": int(r.get("Recent Activity Year", 0)),
+            "Number of Investments": int(r.get("Number of Investments", 0)),
+            "Score": float(round(final_scores[i], 3))
         })
     return results
+
 
 # -----------------------------
 # Collaborative Recommender
@@ -75,8 +111,17 @@ def recommend_collaborative(input_data, top_k=6):
 # Hybrid Recommender
 # -----------------------------
 def recommend_hybrid(input_data, top_k=6):
-    content_scores = recommend_content(input_data, top_k=20)
-    collab_scores  = recommend_collaborative(input_data, top_k=20)
+    try:
+        content_scores = recommend_content(input_data, top_k=20)
+    except Exception as e:
+        print("Content-based failed:", e)
+        content_scores = []
+
+    try:
+        collab_scores  = recommend_collaborative(input_data, top_k=20)
+    except Exception as e:
+        print("Collaborative failed:", e)
+        collab_scores = []
 
     merged = {}
     for rec in content_scores:
@@ -85,18 +130,21 @@ def recommend_hybrid(input_data, top_k=6):
         merged[rec["Investor Name"]] = merged.get(rec["Investor Name"], 0) + rec["Score"] * 0.4
 
     top_pairs = sorted(merged.items(), key=lambda x: x[1], reverse=True)[:top_k]
-    results   = []
+    results = []
     for name, score in top_pairs:
-        row = investor_df[investor_df["Investor Name"] == name].iloc[0]
-        results.append({
-            "Investor Name":            name,
-            "Score":                    float(round(score, 3)),
-            "Location":                 str(row["Location"]),
-            "Ticket Size":              str(row["Ticket Size"]),
-            "Recent Activity Year":     int(row["Recent Activity Year"]),
-            "Number of Investments":    int(row["Number of Investments"])
-        })
+        row = investor_df[investor_df["Investor Name"] == name]
+        if not row.empty:
+            r = row.iloc[0]
+            results.append({
+                "Investor Name": name,
+                "Score": float(round(score, 3)),
+                "Location": str(r.get("Location", "N/A")),
+                "Ticket Size": str(r.get("Ticket Size", "N/A")),
+                "Recent Activity Year": int(r.get("Recent Activity Year", 0)),
+                "Number of Investments": int(r.get("Number of Investments", 0))
+            })
     return results
+
 
 # -----------------------------
 # Startup Similarity Recommender (Fixed to return startups, not investors)
