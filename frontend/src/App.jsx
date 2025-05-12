@@ -2,6 +2,10 @@ import axios from "axios";
 import "./index.css";
 import { useState, useEffect } from "react";
 
+import Modal from "/src/components/Modal.jsx";
+
+
+
 const rsTypes = ["content", "collaborative", "hybrid", "startup_similarity"];
 const YEAR_BUCKETS = ["New", "Growing", "Established", "Unknown"]
 
@@ -20,6 +24,8 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [revenueStage, setRevenueStage] = useState("");
   const [customerSegment, setCustomerSegment] = useState("");
+  const [modalContent, setModalContent] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
 
 
   useEffect(() => {
@@ -27,6 +33,28 @@ export default function App() {
       .then(res => setDropdowns(res.data))
       .catch(err => console.error("Failed to load dropdowns:", err));
   }, []);
+
+  // on investor click
+  const openInvestorModal = async (name) => {
+    try {
+      const res = await axios.get(`http://127.0.0.1:5000/investor/${encodeURIComponent(name)}`);
+      setModalContent({ type: "investor", data: res.data });
+      setModalVisible(true);
+    } catch (err) {
+      console.error("Failed to fetch investor detail:", err);
+    }
+  };
+
+  // on startup click
+  const openStartupModal = async (name) => {
+    try {
+      const res = await axios.get(`http://127.0.0.1:5000/startup/${encodeURIComponent(name)}`);
+      setModalContent({ type: "startup", data: res.data });
+      setModalVisible(true);
+    } catch (err) {
+      console.error("Failed to fetch startup detail:", err);
+    }
+  };
 
   const toggle = (list, item, setter) =>
     setter(list.includes(item) ? list.filter(i => i !== item) : [...list, item]);
@@ -281,7 +309,11 @@ export default function App() {
       <div className="mt-12 max-w-5xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {rsType === "startup_similarity"
           ? results.map((s, i) => (
-              <div key={i} className="bg-[#1f1f1f] rounded-xl p-5 shadow-lg border border-gray-800">
+              <div
+                key={i}
+                onClick={() => openStartupModal(s["Startup Name"])}
+                className="cursor-pointer bg-[#1f1f1f] rounded-xl p-5 shadow-lg border border-gray-800 hover:ring-2 hover:ring-blue-500 transition"
+              >
                 <h2 className="text-xl font-bold text-blue-400">{s["Startup Name"]}</h2>
                 <p className="text-gray-400 text-sm mb-1">Industry: {s.Industry}</p>
                 <ul className="text-sm text-gray-300 space-y-1">
@@ -291,14 +323,17 @@ export default function App() {
                 </ul>
               </div>
             ))
-          :results.map((inv, i) => (
+
+            
+            :results.map((inv, i) => (
             <div
               key={i}
-              className="bg-[#1f1f1f] rounded-xl p-5 shadow-lg border border-gray-800 space-y-3"
+              onClick={() => openInvestorModal(inv["Investor Name"])}
+
+              className="cursor-pointer bg-[#1f1f1f] rounded-xl p-5 shadow-lg border border-gray-800 space-y-3 hover:ring-2 hover:ring-red-500 transition"
             >
               <h2 className="text-xl font-bold text-red-400">{inv["Investor Name"]}</h2>
               <p className="text-gray-400 text-sm mb-2">{inv.Location}</p>
-
               <p className="text-sm text-gray-300">{inv["Investor Bio"]}</p>
 
               <div>
@@ -335,9 +370,44 @@ export default function App() {
                 </li>
               </ul>
             </div>
-
-            ))}
+          ))}
       </div>
+
+      {modalVisible && modalContent && (
+      <Modal
+        onClose={() => setModalVisible(false)}
+        title={
+          modalContent?.type === "investor"
+            ? modalContent.data?.name
+            : modalContent?.data?.["Startup Name"]
+        }
+      >
+        {modalContent?.type === "investor" && (
+          <>
+            <p>Location: {modalContent.data?.location}</p>
+            <p>
+              Industries:{" "}
+              {modalContent.data?.investment_industries?.join(", ") || "N/A"}
+            </p>
+            <p>exit_info: {modalContent.data?.exit_info}</p>
+          </>
+        )}
+
+        {modalContent?.type === "startup" && (
+          <>
+            <p>Industry: {modalContent.data?.Industry}</p>
+            <p>Funding Stage: {modalContent.data?.["Funding Stage"]}</p>
+            <p>Description: {modalContent.data?.Description}</p>
+            <p>Investor: {modalContent.data?.Investor}</p>
+          </>
+        )}
+      </Modal>
+    )}
+
+
     </div>
+
+
+    
   );
 }

@@ -45,22 +45,29 @@ def recommend_route():
         traceback.print_exc()
         return jsonify({"error": "Internal server error", "message": str(e)}), 500
 
-@api.route("/investor/<int:investor_id>", methods=["GET"])
-def investor_detail(investor_id):
-    if investor_id < 0 or investor_id >= len(INVESTORS):
-        return jsonify({"error": "Investor not found"}), 404
+@api.route("/investor/<string:name>", methods=["GET"])
+def investor_detail(name):
+    name_lower = name.lower()
 
-    investor = INVESTORS[investor_id]
-    print(f"📍 Fetched investor with ID {investor_id}: {investor.get('name')}")
-    return jsonify({
-        "name": investor.get("name"),
-        "location": investor.get("location"),
-        "industries": investor.get("industries"),
-        "ticket_size": investor.get("ticket_size"),
-        "num_investments": investor.get("num_investments"),
-        "recent_year": investor.get("recent_year"),
-        "raw": investor.get("processed", {}).get("raw", {})
-    })
+    for investor in enumerate(INVESTORS):
+        # if investor is a tuple, unpack it
+        if isinstance(investor, tuple):
+            _, investor = investor
+
+        if investor.get("name", "").lower() == name_lower:
+            print(f"✅ Found investor '{name}")
+
+            return jsonify({
+                "name": investor.get("name"),
+                "location": investor.get("location"),
+                "industries": investor.get("industries"),
+                "ticket_size": investor.get("ticket_size"),
+                "num_investments": investor.get("num_investments"),
+                "recent_year": investor.get("recent_year"),
+                "raw": investor.get("processed", {}).get("raw", {})
+            })
+        
+        return jsonify({"error": "Investor not found"}), 404
 
 @api.route("/startup/<string:name>", methods=["GET"])
 def startup_detail(name):
