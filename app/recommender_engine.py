@@ -47,20 +47,44 @@ def format_investor_result(score, inv):
         "Investment Stages": inv.get("Investment Stages", "—")
     }
 
-def calculate_similarity_score(encoded_input, encoded_target):
-    weights = {
-        "industry_vec": 0.4,
-        "stage_vec": 0.2,
-        "location_vec": 0.15,
-        "team_vec": 0.15,
-        "year_vec": 0.1
+def calculate_similarity_score(encoded_input, encoded_target, log_prefix=""):
+    base_weights = {
+        "industry_vec": 0.35,
+        "stage_vec": 0.15,
+        "location_vec": 0.1,
+        "team_vec": 0.05,
+        "year_vec": 0.05,
+        "business_model_vec": 0.1,
+        "revenue_stage_vec": 0.1,
+        "customer_segment_vec": 0.1
     }
 
+    # Normalize weights based on presence of input values
+    active_keys = [k for k in base_weights if any(encoded_input.get(k, []))]
+    total_weight = sum(base_weights[k] for k in active_keys)
+
     score = 0.0
-    for key, weight in weights.items():
+    if log_prefix:
+        print(f"\n🔍 {log_prefix} — Feature Contributions (normalized):")
+
+    for key in base_weights:
+        if not any(encoded_input.get(key, [])):
+            continue  # skip missing or zero-vector features
+
+        weight = base_weights[key] / total_weight
         sim = compute_similarity(encoded_input.get(key, []), encoded_target.get(key, []))
-        score += weight * sim
+        contribution = weight * sim
+        score += contribution
+
+        if log_prefix:
+            print(f"  {key.ljust(24)} → sim: {sim:.3f} × norm_weight: {weight:.3f} = {contribution:.3f}")
+
+    if log_prefix:
+        print(f"  {'TOTAL'.ljust(24)} → final score: {score:.3f}\n")
+
     return score
+
+
 
 def recommend_by_content(encoded_input, top_k=10):
     scores = []
@@ -69,8 +93,15 @@ def recommend_by_content(encoded_input, top_k=10):
         score = calculate_similarity_score(encoded_input, inv_vecs)
         if score > 0.1:
             scores.append((score, inv))
+
     sorted_results = sorted(scores, key=lambda x: x[0], reverse=True)
+
+    # 🔍 Show per-feature breakdown for top results
+    for score, inv in sorted_results[:top_k]:
+        calculate_similarity_score(encoded_input, inv["processed"]["encoded"], log_prefix=f"Investor {inv.get('id')} - {inv.get('Name', 'N/A')}")
+
     return [format_investor_result(score, inv) for score, inv in sorted_results[:top_k]]
+
 
 def recommend_by_collaborative(encoded_input, top_k=10):
     score_map = {}

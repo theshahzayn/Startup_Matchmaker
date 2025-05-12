@@ -26,7 +26,7 @@ def extract_investor_features(inv) -> dict:
     return {
         "industries": [normalize_text(i) for i in inv.get("Investment Industries", [])],
         "stages": [normalize_text(s) for s in inv.get("Investment Stages", [])],
-        "location": inv.get("Location", "").split(",")[0].strip(),
+        "location": normalize_text(inv.get("Location", "").split(",")[0].strip()),
         "teamSize": None,
         "foundedYear": None,
         "businessModel": ""
@@ -36,10 +36,12 @@ def extract_startup_features(s) -> dict:
     return {
         "industries": [normalize_text(s.get("Industry", ""))],
         "stages": [normalize_text(s.get("Funding Stage", ""))],
-        "location": s.get("Location", "").split(",")[0].strip(),
+        "location": normalize_text(s.get("Location", "").split(",")[0].strip()),
         "teamSize": s.get("Team Size", "").strip(),
         "foundedYear": s.get("Founded Year", ""),
-        "businessModel": normalize_text(s.get("Business Model", ""))
+        "businessModel": normalize_text(s.get("Business Model", "")),
+        "revenueStage": normalize_text(s.get("Revenue Stage", "")),
+        "customerSegment": normalize_text(s.get("Customer Segment", ""))
     }
 
 # ============ Build Datasets ============

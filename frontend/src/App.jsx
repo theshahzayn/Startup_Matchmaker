@@ -68,7 +68,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#141414] text-white font-sans px-6 py-12">
       <h1 className="text-4xl font-extrabold text-center text-red-500 mb-10">
-        🎯 Startup ↔ Investor Match
+        Startup ↔ Investor Match
       </h1>
 
       <div className="max-w-3xl mx-auto bg-[#1f1f1f] rounded-xl p-6 shadow-xl space-y-6">

@@ -7,7 +7,6 @@ from preprocess import (
     canonicalize_stage,
     bucket_team_size,
     bucket_founded_year,
-    canonicalize_location
 )
 
 # ===============================
@@ -23,6 +22,10 @@ with open(LABELS_PATH, "r") as f:
 INDUSTRY_LABELS = sorted(list(set([canonicalize_industry(i) for i in label_data.get("industries", []) if i])))
 STAGE_LABELS = sorted(list(set([canonicalize_stage(s) for s in label_data.get("stages", []) if s])))
 LOCATION_LABELS = sorted([normalize_text(l) for l in label_data.get("locations", []) if l])
+BUSINESS_MODEL_LABELS = sorted([normalize_text(bm) for bm in label_data.get("business_models", []) if bm])
+REVENUE_STAGE_LABELS = sorted([normalize_text(r) for r in label_data.get("revenue_stages", []) if r])
+CUSTOMER_SEGMENT_LABELS = sorted([normalize_text(c) for c in label_data.get("customer_segments", []) if c])
+
 
 TEAM_BUCKETS = ["Small", "Medium", "Large", "Enterprise", "Unknown"]
 YEAR_BUCKETS = ["New", "Growing", "Established", "Unknown"]
@@ -63,7 +66,7 @@ def full_preprocess(data: Dict) -> Dict:
     cleaned = {
         "industries": [canonicalize_industry(i) for i in data.get("industries", [])],
         "stages": [canonicalize_stage(s) for s in data.get("stages", [])],
-        "location_region": data.get("location", "").split(",")[0].strip(),
+        "location_region": normalize_text(data.get("location", "").split(",")[0].strip()),
         "team_bucket": bucket_team_size(data.get("teamSize", None)),
         "year_bucket": bucket_founded_year(data.get("foundedYear", None)),
         "business_model": normalize_text(data.get("businessModel", "")),
@@ -77,6 +80,9 @@ def full_preprocess(data: Dict) -> Dict:
         "location_vec": one_hot_encode(cleaned["location_region"], LOCATION_LABELS),
         "team_vec": one_hot_encode(cleaned["team_bucket"], TEAM_BUCKETS),
         "year_vec": one_hot_encode(cleaned["year_bucket"], YEAR_BUCKETS),
+        "business_model_vec": one_hot_encode(cleaned["business_model"], BUSINESS_MODEL_LABELS),
+        "revenue_stage_vec": one_hot_encode(cleaned["revenue_stage"], REVENUE_STAGE_LABELS),
+        "customer_segment_vec": one_hot_encode(cleaned["customer_segment"], CUSTOMER_SEGMENT_LABELS),
     }
 
     return {
